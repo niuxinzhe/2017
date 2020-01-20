@@ -1,9 +1,6 @@
 #!/usr/bin/env python
 # coding: utf-8
 
-# In[4]:
-
-
 import re
 import rsa
 import time
@@ -149,10 +146,8 @@ class WeiBoLogin(object):
 if __name__ == "__main__":
     logging.basicConfig(level=logging.DEBUG, format="%(asctime)s\t%(levelname)s\t%(message)s")
     weibo = WeiBoLogin()
-    weibo.login('15708426257', 'a12345123')
+    weibo.login(username, password)
 
-
-# In[ ]:
 
 
 
