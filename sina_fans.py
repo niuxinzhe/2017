@@ -4,7 +4,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 
-def get_data_from_sql(sql_path=u'/Users/wisdombeat/PycharmProjects/weiboBA.db副本', sql_command='SELECT * FROM WeiboQA'):
+def get_data_from_sql(sql_path=u'/Users/wisdombeat/PycharmProjects/weiboBA.db', sql_command='SELECT * FROM WeiboQA'):
     """
     This def can get data from a sqlalchemy and when load success return the generator, else return a string.
     :param sql_path: The path of sqlalchemy.
@@ -112,34 +112,8 @@ header = {
     'X-Requested-With':'XMLHttpRequest'
 }
 data = {
-    'loginName': '15708426257',
-    'loginPassword': 'a12345123'
+    'loginName': username,
+    'loginPassword': password
 }
-data_crawler(header, data)
 
-# url = 'https://weibo.com/ttwenda/p/show?id=2310684194076890135052'
-# header = {
-#     'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,image/apng,*/*;q=0.8',
-#     'Accept-Encoding': 'gzip, deflate, br',
-#     'Accept-Language': 'zh-CN,zh;q=0.9',
-#     'Cache-Control': 'max-age=0',
-#     'Connection': 'keep-alive',
-#     'Cookie': '_s_tentry=-; Apache=2119928308804.2043.1517581575209; SINAGLOBAL=2119928308804.2043.1517581575209; ULV=1517581575215:1:1:1:2119928308804.2043.1517581575209:; '
-#               'YF-Page-G0=d30fd7265234f674761ebc75febc3a9f; SSOLoginState=1525863505; YF-V5-G0=3717816620d23c89a2402129ebf80935; '
-#               'YF-Ugrow-G0=5b31332af1361e117ff29bb32e4d8439; wvr=6; UOR=,,www.baidu.com; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9WFVwy_5W1_NYGmdgVwWBcfN5JpX5KMhUgL.FoeN1hBpSK27SK-2dJLoI7DNIPS.dcfb9g8X; '
-#               'ALF=1557722417; SCF=AnfQ_cdCT6xKGEJ8GWp9Gskyqb31cINlOQCxThJU_RWBpcQNOv8agkZlVVxS1b3sNtc0aS0t2fZj-RboW699Hkc.; '
-#               'SUB=_2A25387HiDeRhGeVJ41YQ9S_MzjmIHXVUiKQqrDV8PUNbmtBeLUjykW9NT8Wm8Dq02-CvHwOMDPa15sCA8MmYnhqU; SUHB=0S7Cr9CqF0c-n8',
-#     'Host': 'weibo.com',
-#     'Referer': 'https://weibo.com/ttwenda/p/show?id=2310684194076890135052',
-#     'Upgrade-Insecure-Requests': '1',
-#     'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/62.0.3202.9 Safari/537.36'
-# }
-# log_data = {
-#     'loginName': '15708426257',
-#     'loginPassword': 'a12345123'
-# }
-#
-# response = requests.get(url=url, data=log_data, headers=header, timeout=20)
-# response.status_code
-# html = response.content.decode('utf-8')
-# print(html)
+data_crawler(header, data)
